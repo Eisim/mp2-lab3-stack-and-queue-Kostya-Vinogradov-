@@ -2,7 +2,9 @@
 
 template<typename T>
 class Queue {
-	T data;
+	T* data;
+	size_t size;
+	size_t capacity;
 	void resize(const int& size);
 
 public:
