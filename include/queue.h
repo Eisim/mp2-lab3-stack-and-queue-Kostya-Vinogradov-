@@ -11,11 +11,19 @@ class Queue {
 	void resize() {
 		capacity = (size + 1) * 2;
 		T* tmp = new T[capacity];
-		std::copy(data, data + size, tmp);
+		if (rptr != 0) {
+			std::copy(data + rptr, data + size, tmp);
+			std::copy(data, data + rptr - 1, tmp);
+
+		}
+		else {
+			std::copy(data, data + size, tmp);
+		}
+		rptr = size;
+		lptr = 0;
 		delete[] data;
 		data = tmp;
-		lptr = 0;
-		rptr = size;
+
 	}
 public:
 	Queue() {
@@ -65,11 +73,13 @@ public:
 
 	}
 	void pop() {
+		if (size == 0 || lptr > rptr) throw "Queue is empty";
 		data[lptr] = 0;
 		lptr++;
-		if (lptr >=capacity)lptr = 0;
-		if (size == 0 || lptr > rptr) throw "Queue is empty";
 		size--;
+		if (lptr >=capacity)lptr = 0;
+		
+		
 
 	}
 
