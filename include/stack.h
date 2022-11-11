@@ -1,6 +1,5 @@
 ﻿#include <algorithm>
 #include <cstddef>
-#include <stdexcept>
 template<typename T>
 class Stack {
 	T* data;
@@ -57,7 +56,7 @@ public:
 	}
 	
 	void pop() {
-		if ((size) <= 0) throw std::exception("Stack is empty");
+		if ((size) <= 0) throw "Stack is empty";
 		
 		size-=1;
 		data[size] = 0;
@@ -66,7 +65,7 @@ public:
 	size_t getSize() { return size; }
 
 	T top() {
-		if (size <= 0) throw std::exception("Stack is empty");
+		if (size <= 0) throw "Stack is empty";
 		return data[size-1];
 	}
 };

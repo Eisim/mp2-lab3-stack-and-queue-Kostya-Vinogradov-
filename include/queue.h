@@ -1,6 +1,5 @@
 ﻿#include <cstddef>
 #include <algorithm>
-#include <stdexcept>
 
 template<typename T>
 class Queue {
@@ -69,7 +68,7 @@ public:
 		data[lptr] = 0;
 		lptr++;
 		if (lptr >=capacity)lptr = 0;
-		if (size == 0 || lptr > rptr) throw std::exception("Queue is empty");
+		if (size == 0 || lptr > rptr) throw "Queue is empty";
 		size--;
 
 	}
@@ -77,7 +76,7 @@ public:
 	size_t getSize() { return size; }
 
 	T top() {
-		if(size<=0)throw std::exception("Queue is empty");
+		if(size<=0)throw "Queue is empty";
 		return data[lptr];
 	}
 };
