@@ -1,4 +1,5 @@
 ﻿#include <cstddef>
+#include <algorithm>
 
 
 template<typename T>
