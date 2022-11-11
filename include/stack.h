@@ -1,4 +1,4 @@
-﻿
+﻿#include<algorithm>
 #include <cstddef>
 
 template<typename T>
