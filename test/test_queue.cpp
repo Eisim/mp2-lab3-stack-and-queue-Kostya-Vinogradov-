@@ -1,4 +1,4 @@
-#include "Queue.h"
+#include "queue.h"
 #include <gtest.h>
 
 TEST(Queue, can_create_queue) {
