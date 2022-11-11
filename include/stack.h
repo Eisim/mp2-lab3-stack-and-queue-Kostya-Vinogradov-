@@ -1,4 +1,5 @@
 ﻿
+#include <cstddef>
 
 template<typename T>
 class Stack {
