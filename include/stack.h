@@ -1,6 +1,6 @@
 ﻿#include <algorithm>
 #include <cstddef>
-
+#include <stdexcept>
 template<typename T>
 class Stack {
 	T* data;

@@ -1,6 +1,5 @@
 #include "queue.h"
 #include <gtest.h>
-#include <stdexcept>
 
 TEST(Queue, can_create_queue) {
 	ASSERT_NO_THROW(Queue<int> q);
