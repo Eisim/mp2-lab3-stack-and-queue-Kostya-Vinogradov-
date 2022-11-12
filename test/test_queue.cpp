@@ -74,3 +74,18 @@ TEST(Queue, empty_work_correctly_on_no_empty_queue) {
 	q1.push(1);
 	EXPECT_EQ(0, q1.empty());
 }
+TEST(Queue, after_move_lptr_and_repack_work_correctly) {
+	Queue<int> q1;
+	q1.push(1);
+	q1.push(1);
+	q1.pop();
+	q1.pop();
+	q1.push(2);
+	q1.push(3);
+	q1.push(4);
+	q1.push(5);
+	for (int i = 2; i <= 5; i++) {
+		EXPECT_EQ(i, q1.top());
+		q1.pop();
+	}
+}
