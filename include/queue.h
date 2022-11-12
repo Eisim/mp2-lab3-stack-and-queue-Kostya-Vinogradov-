@@ -11,14 +11,8 @@ class Queue {
 	void resize() {
 		capacity = (size + 1) * 2;
 		T* tmp = new T[capacity];
-		if (rptr != 0) {
-			std::copy(data + rptr, data + size, tmp);
-			std::copy(data, data + rptr - 1, tmp);
-
-		}
-		else {
-			std::copy(data, data + size, tmp);
-		}
+		std::copy(data+rptr,data+size,tmp);
+		std::copy(data,data+lptr,tmp+size-rptr);
 		rptr = size;
 		lptr = 0;
 		delete[] data;
@@ -86,6 +80,7 @@ public:
 	size_t getSize() { return size; }
 
 	T top() {
+
 		if(size<=0)throw "Queue is empty";
 		return data[lptr];
 	}
