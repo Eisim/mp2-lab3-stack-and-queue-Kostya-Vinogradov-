@@ -13,7 +13,7 @@ public:
 	Stack& operator=(const Stack& q);
 
 	bool empty();
-	void push(T elem);
+	T push(T elem);
 	void pop();
 	T top();
 };
