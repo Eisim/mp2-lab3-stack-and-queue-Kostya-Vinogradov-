@@ -13,7 +13,7 @@ public:
 	Queue& operator=(const Queue& q);
 
 	bool empty();
-	T push(T elem);
+	void push(T elem);
 	void pop();
 	T top();
 };
