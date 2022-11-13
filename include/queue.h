@@ -1,6 +1,9 @@
 ﻿#include <cstddef>
 #include <algorithm>
 
+#pragma once
+
+
 template<typename T>
 class Queue {
 	T* data;

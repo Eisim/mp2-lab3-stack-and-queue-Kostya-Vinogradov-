@@ -1,5 +1,8 @@
 ﻿#include <algorithm>
 #include <cstddef>
+
+#pragma once
+
 template<typename T>
 class Stack {
 	T* data;
